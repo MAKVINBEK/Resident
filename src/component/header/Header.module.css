@@ -1,0 +1,127 @@
+* {
+    transition: .3s ;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1240px;
+    width: 90%;    
+    background: #ffffff;
+    margin: 0 auto;
+}
+
+.section{
+    width: 100%;
+    background: #ffffff;
+    position: fixed;
+    top: 0; 
+    z-index: 10; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.052);
+}
+
+body {
+    padding-top: calc(70px + 70px);
+}
+
+.logo{
+    width: 180px;
+    height: 45px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.navbar li {
+    list-style: none;
+    font-size: 20px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 5px solid #ffffff;
+}
+
+.navbar>li:hover {
+    border-image: linear-gradient(to right,#ac802a,#ac802a,#dcc164) 1;
+    background : linear-gradient(to right, #ac802a, #dcc164); /* Градиент */
+    -webkit-background-clip: text; /* Обрезка фона по тексту (для Webkit-браузеров) */
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar li:hover img {
+    transform: rotate(180deg);
+}
+
+.dropDown {
+    display: none;
+    position:absolute;
+    top: 107%;
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    color: black;
+    -webkit-text-fill-color:black;
+}
+
+.navbar li:hover>div {
+    display: block;
+}
+
+.dropDown a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    opacity: 1;
+}
+
+.dropDown :hover {
+    background : linear-gradient(to right, #ac802a, #dcc164); /* Градиент */
+    -webkit-background-clip: text; /* Обрезка фона по тексту (для Webkit-браузеров) */
+    -webkit-text-fill-color: transparent;
+}
+
+.search{
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+  }
+
+.search img {
+    width: 30px;
+    height: 30px;
+    outline: none;
+}
+
+.search img:hover {
+    transform: scale(1.2);
+    border: none;
+}
+
+section a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.searchBar {
+    position: absolute;
+    top: 0;
+    left:23%;
+    width: 65%;
+    height: 100%;
+    padding: 10px 30px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 3px solid #0a0a0a;
+    border-radius: 5px;
+    font-size: 20px;
+  }

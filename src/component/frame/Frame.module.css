@@ -1,0 +1,56 @@
+.container {
+    max-width: 1240px;
+    width: 90%;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px 18px;
+    
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right,#ac802a,#dcc164) 1;
+}
+
+.item h1{
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.group{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.image {
+    width: 270px;
+    height: 260px;
+}
+
+.name {
+    font-size: 18px;
+    background: linear-gradient(to right, #af802a, #dfc464);
+    /* Градиент */
+    -webkit-background-clip: text;
+    /* Обрезка фона по тексту (для Webkit-браузеров) */
+    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 18px;
+    margin: 10px 0;
+}
+
+.date {
+    font-size: 16px;
+    font-weight: 400;
+    color: #979797;
+}
+
