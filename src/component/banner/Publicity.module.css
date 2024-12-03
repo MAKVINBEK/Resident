@@ -1,9 +1,9 @@
-.container{
-    max-width: 1240px;
-    width: 90%;    
-    margin:100px auto;
+.parent{
+    margin: 50px 0;
 }
 
-.container img{
-    max-width: 1210px;
+.parent img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }

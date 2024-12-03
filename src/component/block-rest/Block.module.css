@@ -1,3 +1,8 @@
+.parent{
+        background-color: #ffffff;
+        padding: 20px 18px;
+}
+
 .groupBlock{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -46,3 +51,19 @@
     filter: brightness(95%);
 }
 
+@media (max-width: 768px) {
+
+    .block{
+        flex-direction: column-reverse;
+        gap: 25px;
+    }
+
+    .groupBlock {
+        grid-template-columns: 1fr; /* Все блоки в одном столбце */
+        gap: 15px;
+    }
+
+    .block1 {
+        width: 100%; /* Увеличиваем ширину на мобильных устройствах */
+    }
+}

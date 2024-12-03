@@ -5,11 +5,12 @@ import Data from "../../Data"
 
 const Frame = () => {
     return (
-        <section className={css.container}>
-            <div className={css.item}>
-                        <h1>популярные</h1>
-                        <img src={next} alt="" />
-                    </div>  
+        <section className="container">
+            <div className={css.parent}>
+                <div className={css.item}>
+                    <h1>популярные</h1>
+                    <img src={next} alt="" />
+                </div>
                 <div className={css.group}>
                     {Data.map((el, Index) => (
                         <div key={Index} className={css.card}>
@@ -18,9 +19,9 @@ const Frame = () => {
                             <h4 className={css.title}>{el.title}</h4>
                             <span className={css.date}>{el.date}</span>
                         </div>
-                     ))}
+                    ))}
                 </div>
-           
+            </div>
         </section>
     );
 };

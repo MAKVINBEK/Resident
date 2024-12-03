@@ -8,7 +8,7 @@ import tiktok from "../../assets/union.png"
 const Footer = () => {
     return (
         <section className={css.section}>
-            <div className={css.container}>
+            <div className="container">
 
                 <div className={css.logos}>
                     <img src={logo} alt="" />

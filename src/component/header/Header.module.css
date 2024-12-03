@@ -1,23 +1,20 @@
 * {
-    transition: .3s ;
+    transition: .3s;
 }
 
-.container{
+.parent {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1240px;
-    width: 90%;    
-    background: #ffffff;
-    margin: 0 auto;
+    height: 80px;
 }
 
-.section{
+.section {
     width: 100%;
     background: #ffffff;
     position: fixed;
-    top: 0; 
-    z-index: 10; 
+    top: 0;
+    z-index: 10;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.052);
 }
 
@@ -25,19 +22,19 @@ body {
     padding-top: calc(70px + 70px);
 }
 
-.logo{
+.logo {
     width: 180px;
     height: 45px;
 }
 
-.navbar {
+.menu {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
 }
 
-.navbar li {
+.menu li {
     list-style: none;
     font-size: 20px;
     height: 80px;
@@ -47,29 +44,31 @@ body {
     border-bottom: 5px solid #ffffff;
 }
 
-.navbar>li:hover {
-    border-image: linear-gradient(to right,#ac802a,#ac802a,#dcc164) 1;
-    background : linear-gradient(to right, #ac802a, #dcc164); /* Градиент */
-    -webkit-background-clip: text; /* Обрезка фона по тексту (для Webkit-браузеров) */
+.menu>li:hover {
+    border-image: linear-gradient(to right, #ac802a, #ac802a, #dcc164) 1;
+    background: linear-gradient(to right, #ac802a, #dcc164);
+    /* Градиент */
+    -webkit-background-clip: text;
+    /* Обрезка фона по тексту (для Webkit-браузеров) */
     -webkit-text-fill-color: transparent;
 }
 
-.navbar li:hover img {
+.menu li:hover img {
     transform: rotate(180deg);
 }
 
 .dropDown {
     display: none;
-    position:absolute;
+    position: absolute;
     top: 107%;
     left: 0;
     background-color: #fff;
     padding: 10px;
     color: black;
-    -webkit-text-fill-color:black;
+    -webkit-text-fill-color: black;
 }
 
-.navbar li:hover>div {
+.menu li:hover>div {
     display: block;
 }
 
@@ -83,18 +82,20 @@ body {
 }
 
 .dropDown :hover {
-    background : linear-gradient(to right, #ac802a, #dcc164); /* Градиент */
-    -webkit-background-clip: text; /* Обрезка фона по тексту (для Webkit-браузеров) */
+    background: linear-gradient(to right, #ac802a, #dcc164);
+    /* Градиент */
+    -webkit-background-clip: text;
+    /* Обрезка фона по тексту (для Webkit-браузеров) */
     -webkit-text-fill-color: transparent;
 }
 
-.search{
+.search {
     background: none;
     border: none;
     font-size: 24px;
     cursor: pointer;
     outline: none;
-  }
+}
 
 .search img {
     width: 30px;
@@ -115,7 +116,7 @@ section a {
 .searchBar {
     position: absolute;
     top: 0;
-    left:23%;
+    left: 23%;
     width: 65%;
     height: 100%;
     padding: 10px 30px;
@@ -124,4 +125,59 @@ section a {
     border-bottom: 3px solid #0a0a0a;
     border-radius: 5px;
     font-size: 20px;
-  }
+}
+
+.burgerMenu{
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .logo{
+        display: flex;
+        justify-content: center;
+    }
+
+    .searchBar {
+        width: 80%;
+        left: 10%;
+    }
+
+    .dropDown{
+        position:relative;
+    }
+
+    .hasDropdown{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .burgerMenu {
+        display: block;
+    }
+
+    .menu{
+        flex-direction: column;
+        justify-content: center;
+        gap: 20;
+        position: fixed;
+        left: -100%;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 70%;
+        height: 100vh;
+        z-index: 10px;
+        background-color: #fff;
+        transition: left 1s;
+    }
+
+    .menu li{
+        height: 0;
+    }
+
+    .active{
+        left: 0;
+    }
+
+}

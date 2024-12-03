@@ -7,8 +7,9 @@ import slipLogo from '../../assets/slip.jpeg'
 
 const Block = () => {
     return (
-        <section className={css.container}>
-            <div className={css.item}>
+        <section className="container">
+            <div className={css.parent}>
+                <div className={css.item}>
                 <h1>Роскошный отдых</h1>
                 <img src={next} alt="" />
             </div>
@@ -44,6 +45,8 @@ const Block = () => {
                     </div>
                 ))}
             </div>
+            </div>
+            
 
         </section>
     );
