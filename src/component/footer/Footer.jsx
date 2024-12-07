@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import css from "./Footer.module.css"
 import logo from "../../assets/Logo.png"
 import facebook from "../../assets/facebook.png"
@@ -24,32 +25,32 @@ const Footer = () => {
 
                     <div className={css.blockStart}>
                         <div className={css.block}>
-                        <p className={css.project_Title}>- ваш гид в мире строительства, объединяющий всех, кто стремится
-                            создавать надежные и удобные дома, а также поможет читателям расширить
-                            свой кругозор и узнать что-то новое
-                        </p>
+                            <p className={css.project_Title}>- ваш гид в мире строительства, объединяющий всех, кто стремится
+                                создавать надежные и удобные дома, а также поможет читателям расширить
+                                свой кругозор и узнать что-то новое
+                            </p>
+                        </div>
                     </div>
-                    </div>
-                    
-                   <div className={css.blockStart}>
-                    <div className={css.block}>
-                        <h6 className={css.project_name} >Категории:</h6>
-                        <a className={css.project_Title} href="#">Недвижимость</a>
-                        <a className={css.project_Title} href="#">Роскошный отдых</a>
-                        <a className={css.project_Title} href="#">Интервью</a>
-                        <a className={css.project_Title} href="#">Дизайн</a>
-                        <a className={css.project_Title} href="#">Продукты</a>
-                    </div>
-                   </div>
-                    
+
                     <div className={css.blockStart}>
                         <div className={css.block}>
-                        <h6 className={css.project_name}>Компания:</h6>
-                        <a className={css.project_Title} href="#">О нас</a>
-                        <a className={css.project_Title} href="#">Контакты</a>
+                            <h6 className={css.project_name} >Категории:</h6>
+                            <Link className={css.footer__link} to="/estate">Недвижимость</Link>
+                            <Link className={css.footer__link} to="/Luxury_life">Роскошный отдых</Link>
+                            <Link className={css.footer__link} to="/interview">Интервью</Link>
+                            <Link className={css.footer__link} to="/design">Дизайн</Link>
+                            <Link className={css.footer__link} to="/products">Продукты</Link>
+                        </div>
                     </div>
+
+                    <div className={css.blockStart}>
+                        <div className={css.block}>
+                            <h6 className={css.project_name}>Компания:</h6>
+                            <Link className={css.footer__link} to="/about-us">О нас</Link>
+                            <Link className={css.footer__link} to="/contact">Контакты</Link>
+                        </div>
                     </div>
-                    
+
 
                     <div className={css.blockEnd}>
                         <h6 className={css.project_name}>г. Бишкек, ул. <br />Нуркамала 29</h6>

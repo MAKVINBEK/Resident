@@ -1,22 +1,22 @@
-.parent{
-        background-color: #ffffff;
-        padding: 20px 18px;
+.parent {
+    background-color: #ffffff;
+    padding: 20px 18px;
 }
 
-.groupBlock{
+.groupBlock {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
 .name {
     width: 160px;
     height: 26px;
-    font-size: 17px;
+    font-size: 18px;
     color: #fff;
     background: linear-gradient(60deg, #af802a, #dfc464);
     margin-top: 10px;
-    padding-top: 2px;
     padding-left: 10px;
 }
 
@@ -25,7 +25,7 @@
     font-size: 18px;
     line-height: 18px;
     margin: 15px 0;
-    color:#ffffff;
+    color: #ffffff;
 }
 
 .date {
@@ -34,36 +34,38 @@
     color: #e2e2e2;
 }
 
-.block{
+.block {
     display: flex;
     gap: 15px;
     margin-top: 30px;
 }
 
-.block1{
+.block1 {
     width: 75%;
     height: 340px;
     background: url(../../assets/slip.jpeg);
     background-position: center;
     background-size: cover;
-    padding-top: 220px;
+    padding-top: 200px;
     padding-left: 25px;
     filter: brightness(95%);
 }
 
 @media (max-width: 768px) {
 
-    .block{
+    .block {
         flex-direction: column-reverse;
         gap: 25px;
     }
 
     .groupBlock {
-        grid-template-columns: 1fr; /* Все блоки в одном столбце */
+        grid-template-columns: 1fr;
+        /* Все блоки в одном столбце */
         gap: 15px;
     }
 
     .block1 {
-        width: 100%; /* Увеличиваем ширину на мобильных устройствах */
+        width: 100%;
+        /* Увеличиваем ширину на мобильных устройствах */
     }
 }

@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: space-between;
     height: 80px;
+    gap: 30px;
 }
 
 .section {
@@ -19,7 +20,7 @@
 }
 
 body {
-    padding-top: calc(70px + 70px);
+    padding: 140px 0;
 }
 
 .logo {
@@ -29,46 +30,58 @@ body {
 
 .menu {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+    height: 80px;
+    gap: 30px;
 }
 
 .menu li {
-    list-style: none;
-    font-size: 20px;
+    font-size: 19px;
     height: 80px;
     position: relative;
     display: flex;
     align-items: center;
-    border-bottom: 5px solid #ffffff;
+    border-bottom: 4px solid #ffffff;
 }
 
 .menu>li:hover {
     border-image: linear-gradient(to right, #ac802a, #ac802a, #dcc164) 1;
     background: linear-gradient(to right, #ac802a, #dcc164);
-    /* Градиент */
     -webkit-background-clip: text;
-    /* Обрезка фона по тексту (для Webkit-браузеров) */
     -webkit-text-fill-color: transparent;
 }
 
-.menu li:hover img {
+
+.clickDrop {
+    display: flex;
+    justify-content: center;
+    padding-top: 3px;
+    display: none;
+}
+
+.menu li:hover .ok {
     transform: rotate(180deg);
 }
 
 .dropDown {
     display: none;
     position: absolute;
-    top: 107%;
+    top: 105%;
     left: 0;
+    z-index: 20;
     background-color: #fff;
     padding: 10px;
     color: black;
     -webkit-text-fill-color: black;
 }
 
-.menu li:hover>div {
+.hasDropdown {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 185px;
+}
+
+.menu li:hover>.dropDown {
     display: block;
 }
 
@@ -78,10 +91,9 @@ body {
     font-size: 20px;
     width: 100%;
     border: none;
-    opacity: 1;
 }
 
-.dropDown :hover {
+.dropDown a:hover {
     background: linear-gradient(to right, #ac802a, #dcc164);
     /* Градиент */
     -webkit-background-clip: text;
@@ -89,23 +101,15 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-.search {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    outline: none;
-}
-
-.search img {
-    width: 30px;
+.searchBar {
     height: 30px;
+    border: none;
+    width: 100%;
     outline: none;
 }
 
-.search img:hover {
+.search:hover {
     transform: scale(1.2);
-    border: none;
 }
 
 section a {
@@ -113,71 +117,126 @@ section a {
     color: currentColor;
 }
 
-.searchBar {
-    position: absolute;
-    top: 0;
-    left: 23%;
-    width: 65%;
-    height: 100%;
-    padding: 10px 30px;
-    font-size: 16px;
-    border: none;
-    border-bottom: 3px solid #0a0a0a;
-    border-radius: 5px;
-    font-size: 20px;
+.none {
+    display: none;
 }
 
-.burgerMenu{
+.block {
+    position: relative;
+}
+
+.clickBlock{
     display: none;
+}
+
+.input {
+    position: absolute;
+    top: 15px;
+    left: 35%;
+    width: 40%;
+    padding: 10px 0;
+    border: none;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.burgerMenu {
+    display: none;
+}
+
+.burger_Menu {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .menu {
+        overflow-y: hidden;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
 }
 
 @media (max-width: 768px) {
 
-    .logo{
+    .ok{
+        display: none;
+    }
+
+    .menu li:hover>.dropDown {
+        display: none;
+    }
+
+    .clickBlock{
+        display: block;
+        color: rgba(0, 0, 0, 0.541);
+    }
+
+    .rotateClicknone{
+        transform: rotate(0deg);
+        transition: .5s;
+    }
+
+    .rotateClick{
+        transform: rotate(180deg);
+        transition: .5s;
+
+    }
+
+    .nones {
+        display: none;
+    }
+
+    .clickDrop {
+        width: 35px;
+        height: 35px;
+        background-color: rgba(0, 0, 0, 0.11);
         display: flex;
+        align-items: center;
         justify-content: center;
-    }
-
-    .searchBar {
-        width: 80%;
-        left: 10%;
-    }
-
-    .dropDown{
-        position:relative;
-    }
-
-    .hasDropdown{
-        display: flex;
-        flex-direction: column;
     }
 
     .burgerMenu {
         display: block;
     }
 
-    .menu{
+    .burger_Menu {
+        display: flex;
+        justify-content: end;
+        padding-right: 30px;
+    }
+
+    .menu {
         flex-direction: column;
-        justify-content: center;
-        gap: 20;
         position: fixed;
         left: -100%;
+        gap: 0;
         right: 0;
         top: 0;
         bottom: 0;
         width: 70%;
         height: 100vh;
-        z-index: 10px;
         background-color: #fff;
-        transition: left 1s;
+        padding-top: 10px;
+        padding-left: 20px;
     }
 
-    .menu li{
-        height: 0;
+    .menu li {
+        display:flex;
+        width: fit-content;
+        font-size: 25px;
+        align-items: center;
+        height: 50px;
+    }
+    
+    .menu li:hover{
+        border:none;
     }
 
-    .active{
+    .active {
         left: 0;
     }
-
 }

@@ -1,0 +1,50 @@
+.parent{
+    margin-top: 100px;
+}
+
+.item{
+    padding-bottom: 10px;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right,#ac802a,#dcc164);
+}
+
+.content{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.content img{
+    width: 100%;
+    height: auto;
+}
+
+.text p{
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.blockTop{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.blockTop img{
+width: 48%;
+height: auto;
+}
+
+@media(max-width: 768px){
+    .content{
+        grid-template-columns: 1fr;
+    }
+
+    .blockTop{
+        gap: 10px;
+    }
+
+}

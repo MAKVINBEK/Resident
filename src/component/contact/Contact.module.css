@@ -1,0 +1,116 @@
+.parent {
+    display: flex;
+    gap: 20px;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: #131212;
+    width: 100%;
+    height: auto;
+}
+
+.footer button {
+    width: 100px;
+    height: 26px;
+    border: none;
+    color: #ffffff;
+    background: linear-gradient(45deg, #af802a, #dfc464);
+}
+
+.footer h1 {
+    font-weight: 700;
+    font-size: 24px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.footer a {
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: underline;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.contact_project {
+    font-weight: 400;
+    font-size: 14px;
+    color: #979797;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.contacts_project {
+    font-weight: 400;
+    font-size: 14px;
+    color: #979797;
+}
+
+.contacts_title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.marginTop {
+    margin-top: 30px;
+}
+
+.contacts_flex_text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.contacts_sait {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    cursor: pointer;
+}
+
+@media(max-width: 848px) {
+    .parent {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contacts_sait {
+        flex-direction: column;
+        align-items: start;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer h1 {
+        font-size: 20px;
+    }
+
+    .footer a {
+        font-size: 14px;
+    }
+
+    .footer button {
+        width: 80px;
+    }
+}

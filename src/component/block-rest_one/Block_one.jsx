@@ -5,7 +5,7 @@ import Data from "../../Data"
 
 
 
-const Block1 = () => {
+const Block_one = () => {
     return (
         <section className="container">
 
@@ -53,4 +53,4 @@ const Block1 = () => {
     );
 };
 
-export default Block1;
+export default Block_one;

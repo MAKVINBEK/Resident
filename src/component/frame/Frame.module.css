@@ -8,9 +8,13 @@
     border-bottom: 5px solid;
     border-image: linear-gradient(to right,#ac802a,#dcc164) 1;
 }
-.item h1{
+.item h2{
     font-weight: 700;
-    font-size: 24px;
+    font-size: 26px;
+}
+
+.item img:hover{
+    transform: translate(8px,-8px);
 }
 
 .group{
@@ -36,14 +40,15 @@
 }
 
 .title {
-    font-weight: 700;
-    font-size: 19px;
+    font-weight: 600;
+    font-size: 18px;
     line-height: 18px;
+    color: #131212;
     margin: 10px 0;
 }
 
 .date {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 400;
     color: #979797;
 }

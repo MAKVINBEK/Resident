@@ -8,7 +8,7 @@ const Interwiv = () => {
             <section className="container">
                 <div className={css.parent}>
                     <div className={css.item}>
-                        <h1>недвижимость</h1>
+                        <h2>интервью</h2>
                         <img src={next} alt="" />
                     </div>
                     <div className={css.group}>

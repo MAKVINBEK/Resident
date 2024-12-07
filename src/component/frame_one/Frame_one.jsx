@@ -3,7 +3,7 @@ import next from "../../assets/next.png"
 import Data from "../../Data";
 
 
-const Frame1 = () => {
+const Frame_one = () => {
         return (
             <section className="container">
                 <div className={css.parent}>
@@ -28,4 +28,4 @@ const Frame1 = () => {
 };
 
 
-export default Frame1;
+export default Frame_one;

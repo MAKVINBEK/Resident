@@ -3,7 +3,7 @@ import image from "../../assets/publiciy 4.png"
 
  
 
-const Banner2 = () => {
+const Banner_two = () => {
     return(
         <section className="container">
             <div className={css.parent}>
@@ -14,4 +14,4 @@ const Banner2 = () => {
     )
 }
 
-export default Banner2;
+export default Banner_two;

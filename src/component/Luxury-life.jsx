@@ -1,0 +1,54 @@
+import css from "./frame/Frame.module.css";
+import style from "./block-rest/Block.module.css"
+import next from "../assets/next.png"
+import Data from "../Data"
+
+
+const Luxury_life = () => {
+    return (
+        <section className="container">
+            <div className={css.parent}>
+                <div className={css.item}>
+                <h2>Роскошный отдых</h2>
+                <img src={next} alt="" />
+            </div>
+
+            <div className={style.block}>
+
+                <div className={style.block1}>
+                    <p className={style.name}>роскошный отдых</p>
+                    <h4 className={style.title}> Отель Орион - не только место для отдыха</h4>
+                    <span className={style.date}>1 февраля 2024 - 5 мин</span>
+                </div>
+
+                <div className={style.groupBlock}>
+                    {Data.map((el, Index) => (
+                        <div key={Index} className={css.card}>
+                            <p className={css.name}>{el.name}</p>
+                            <h4 className={css.title}>{el.title}</h4>
+                            <span className={css.date}>{el.date}</span>
+                        </div>
+                    ))}
+                </div>
+
+            </div>
+
+
+            <div className={css.group}>
+                {Data.map((el, Index) => (
+                    <div key={Index} className={css.card}>
+                        <img src={el.image} alt="" className={css.image} />
+                        <p className={css.name}>{el.name}</p>
+                        <h4 className={css.title}>{el.title}</h4>
+                        <span className={css.date}>{el.date}</span>
+                    </div>
+                ))}
+            </div>
+            </div>
+            
+
+        </section>
+    );
+};
+
+export default Luxury_life;

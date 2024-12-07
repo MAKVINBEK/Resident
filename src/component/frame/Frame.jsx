@@ -8,7 +8,7 @@ const Frame = () => {
         <section className="container">
             <div className={css.parent}>
                 <div className={css.item}>
-                    <h1>популярные</h1>
+                    <h2>популярные</h2>
                     <img src={next} alt="" />
                 </div>
                 <div className={css.group}>

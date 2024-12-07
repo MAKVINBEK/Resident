@@ -21,11 +21,12 @@ const Reklama = () => {
                     spaceBetween={30}
                     slidesPerView={3}
                     navigation
-                    pagination={{ clickable: false }}
+                    pagination={{ clickable: true }}
                     autoplay={{
-                        delay: 3000,
-                        disableOnInteraction: false,
+                    delay: 3000,
+                    disableOnInteraction: false,
                     }}
+                    loop={true}
                 >
                     <div >
                         {Data.map((slide) => (
