@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="container">
 
                 <div className={css.logos}>
-                    <img src={logo} alt="" />
+                    <Link to="/home"><img src={logo} alt="" /></Link>
                     <div>
                         <img src={facebook} alt="" />
                         <img src={twitter} alt="" />
