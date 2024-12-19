@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import css from "./Footer.module.css"
-import logo from "../../assets/Logo.png"
-import facebook from "../../assets/facebook.png"
-import twitter from "../../assets/twitter.png"
-import instogram from "../../assets/instogram.png"
-import tiktok from "../../assets/union.png"
-
+import logo from "../../assets/Logo.png";
+import facebook from "../../assets/facebook.png";
+import twitter from "../../assets/twitter.png";
+import instogram from "../../assets/instogram.png";
+import tiktok from "../../assets/union.png";
 const Footer = () => {
     return (
         <section className={css.section}>
