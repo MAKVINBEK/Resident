@@ -1,6 +1,5 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from './pages/home';
 import Real_Estate from './pages/Real-Estate';
 import Design from './pages/Design';
 import Products from './pages/Products';
@@ -11,6 +10,7 @@ import AboutUs from './pages/AboutUs';
 import Hotel from './pages/Hotel';
 import Header from './component/header/Header';
 import Footer from './component/footer/Footer';
+import Home from './pages/Home';
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
       <Router>
       <Header/>
         <Routes>
-          <Route path='/home' element={<Home />} />
+          <Route path='/home' element={<Home/>} />
           <Route path='/estate' element={<Real_Estate />} />
           <Route path='/design' element={<Design />} />
           <Route path='/products' element={<Products />} />

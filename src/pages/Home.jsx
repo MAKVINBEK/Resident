@@ -1,4 +1,7 @@
-
+import Publicity from "../component/banner/Publicity"
+import Banner_one from "../component/banner_one/Banner_one"
+import Banner_three from "../component/banner_three/Banner_three"
+import Banner_two from "../component/banner_two/Baner_two"
 import Block from "../component/block-rest/Block"
 import Block_one from "../component/block-rest_one/Block_one"
 import Frame from "../component/frame/Frame"
