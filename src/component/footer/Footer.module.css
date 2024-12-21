@@ -72,6 +72,11 @@
     .blockEnd {
         align-items: center;
     }
+
+    .logosip{
+        width: 150px;
+        height: auto;
+    }
 }
 
 @media (max-width: 648px) {
