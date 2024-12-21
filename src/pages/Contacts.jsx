@@ -4,7 +4,6 @@ import Header from "../component/header/Header"
 function Contacts() {
   return (
     <>
-      <Header/>
       <Contact/>
     </>
   )

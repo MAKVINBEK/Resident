@@ -9,7 +9,6 @@ function AboutUs() {
 
     return(
         <>
-        <Header/>
         <About_Us/>
         <About/>
         <Advantages/>

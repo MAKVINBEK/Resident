@@ -4,7 +4,7 @@ import logo from "../../assets/Logo.png";
 import facebook from "../../assets/facebook.png";
 import twitter from "../../assets/twitter.png";
 import instogram from "../../assets/instogram.png";
-import tiktok from "../../assets/union.png";
+import tiktok from "../../assets/Union.png";
 const Footer = () => {
     return (
         <section className={css.section}>

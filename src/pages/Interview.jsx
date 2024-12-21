@@ -8,7 +8,6 @@ function Interview() {
 
   return (
     <>
-      <Header/>
       <Interwiv/>
     </>
   )

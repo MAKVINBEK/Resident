@@ -30,7 +30,6 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/Luxury_life/hotel" element={<Hotel/>} />
         </Routes>
-        <Footer/>
       </Router>
     </>
   )

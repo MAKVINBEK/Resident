@@ -9,7 +9,6 @@ function Luxury() {
 
   return (
     <>
-      <Header/>
       <Luxury_life/>
     </>
   )
