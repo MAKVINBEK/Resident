@@ -31,7 +31,7 @@ const Header = () => {
                         <Hamburger toggled={Open} toggle={setOpen} />
                     </div>
 
-                    <Link to="/home"><img className={isSearchVisible ? `${css.nones} ${css.logo}` : css.logo} src={logo} alt="" /></Link>
+                    <Link to="/"><img className={isSearchVisible ? `${css.nones} ${css.logo}` : css.logo} src={logo} alt="" /></Link>
 
                     <ul className={
                         isSearchVisible
