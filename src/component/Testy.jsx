@@ -1,9 +1,8 @@
 import css from "./frame/Frame.module.css"
-import next from "../assets/next.png"
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const Interwiv = () => {
+const Testy = () => {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null); 
@@ -24,17 +23,17 @@ const Interwiv = () => {
     }, []);
   
   
-    if (loading) return <p>Загрузка... </p>;
+    if (loading) return <p>...</p>;
     if (error) return <p>{error}</p>;
   
       return (
           <section className="container">
               <div className={css.parent}>
                   <div className={css.item}>
-                  <h2>Интервью</h2>
+                  <h2>Тесты</h2>
                   </div>
                   <div className={css.group}>
-                      {articles.Interviews.map((el) => (
+                      {articles.Tests.map((el) => (
                           <div key={el.id} className={css.card}>
                               <img src={el.img} alt="" className={css.image} />
                               <p className={css.name}>{el.cat_title}</p>
@@ -50,4 +49,4 @@ const Interwiv = () => {
 };
 
 
-export default Interwiv;
+export default Testy;

@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import css from "./Header.module.css"
 import ok from "../../assets/ok.png"
@@ -8,18 +9,34 @@ import logo from "../../assets/Logo.png"
 import { Squash as Hamburger } from 'hamburger-react'
 
 const Header = () => {
-
-    const [isSearchVisible, setSearchVisible] = useState(false);
-    const [Open, setOpen] = useState(false)
-    const [down, setDown] = useState(false)
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null); 
+  const [isSearchVisible, setSearchVisible] = useState(false);
+    const [Open, setOpen] = useState(false)    
 
     const toggleSearch = () => {
         setSearchVisible((prev) => !prev);
     };
 
-    const toggleClass = () => {
-        setDown((prev) => !prev);
-    }
+  useEffect(() => {
+    const loadArticles = async () => {
+      try {
+        const response = await axios("https://resident.kg/api/ru/header");
+        setArticles(response.data); 
+      } catch (err) {
+        setError("Something went wrong, please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadArticles();
+  }, []);
+
+
+  if (loading) return <p>Загрузка... </p>;
+  if (error) return <p>{error}</p>;
 
     return (
         <section className={css.section}>
@@ -45,40 +62,19 @@ const Header = () => {
                             <Hamburger toggled={Open} toggle={setOpen} />
                         </div>
 
-                        <li onClick={() => setOpen(!Open)}><Link to="/estate">недвижимость</Link></li>
-                        <li>
-                            <div className={css.hasDropdown}>
-                                <Link to="/Luxury_life" onClick={() => setOpen(!Open)}>роскошный отдых</Link>
-                                <div onClick={toggleClass} className={css.clickDrop}>
-                                    <img className={down ? css.rotateClick: css.rotateClicknone} src={ok} />
+                        {articles.map((el) => (
+                            <div className={css.menuItem}>
+                                <li key={el.id}><Link to={el.slug} onClick={() => setOpen(!Open)}>{el.title}</Link> {el.subcategory.length >0 ?<img src={ok} alt="" /> : ""}</li>
+                                
+                                <div className={css.dropDown}>
+                                    {el.subcategory.map((sub) => (
+                                    <Link to={`${el.slug}/${sub.slug}`}>{sub.title}</Link>
+                                ))}
                                 </div>
-                                <img className={css.ok} src={ok} />
+                                
                             </div>
+                        ))}
 
-                            <div className={css.dropDown}>
-                                <Link to="/Luxury_life/hotel" onClick={() => setOpen(!Open)}>отель</Link>
-                                <Link to="/Luxury_life/restaurant" onClick={() => setOpen(!Open)}>ресторан</Link>
-                                <Link to="/Luxury_life/salons" onClick={() => setOpen(!Open)}>спа-салоны</Link>
-                                <Link to="/Luxury_life/shops" onClick={() => setOpen(!Open)}>магазины</Link>
-                            </div >
-
-                        </li>
-                        {down && (
-                            <li onClick={() => setOpen(!Open)} className={css.clickBlock}><Link to="/Luxury_life/hotel">отель</Link></li>
-                        )}
-                        {down && (
-                            <li onClick={() => setOpen(!Open)} className={css.clickBlock}><Link to="/Luxury_life/restaurant">ресторан</Link></li>
-                        )}
-                        {down && (
-                            <li onClick={() => setOpen(!Open)} className={css.clickBlock}><Link to="/Luxury_life/salons">спа-салоны</Link></li>
-                        )}
-                        {down && (
-                            <li onClick={() => setOpen(!Open)} className={css.clickBlock}><Link to="/Luxury_life/shops">магазины</Link></li>
-                        )}
-
-                        <li onClick={() => setOpen(!Open)}><Link to="/design">дизайн</Link></li>
-                        <li onClick={() => setOpen(!Open)}><Link to="/products">продукты</Link></li>
-                        <li onClick={() => setOpen(!Open)}><Link to="/interview">интервью</Link></li>
                         <li onClick={() => setOpen(!Open)}><Link to="/contact">контакты</Link></li>
                     </ul>
 

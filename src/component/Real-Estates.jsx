@@ -1,29 +1,51 @@
 import css from "./frame/Frame.module.css"
 import next from "../assets/next.png"
-import Data from "../Data";
-
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const Estate = () => {
-        return (
-            <section className="container">
-                <div className={css.parent}>
-                    <div className={css.item}>
-                        <h1>недвижимость</h1>
-                        <img src={next} alt="" />
-                    </div>
-                    <div className={css.group}>
-                        {Data.map((el, Index) => (
-                            <div key={Index} className={css.card}>
-                                <img src={el.image} alt="" className={css.image} />
-                                <p className={css.name}>Недвижимость</p>
-                                <h4 className={css.title}>{el.title}</h4>
-                                <span className={css.date}>{el.date}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-        );
+    const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null); 
+  
+    useEffect(() => {
+      const loadArticles = async () => {
+        try {
+          const response = await axios("https://resident.kg/api/ru/list");
+          setArticles(response.data); 
+        } catch (err) {
+          setError("Something went wrong, please try again later.");
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      loadArticles();
+    }, []);
+  
+  
+    if (loading) return <p>Загрузка... </p>;
+    if (error) return <p>{error}</p>;
+  
+      return (
+          <section className="container">
+              <div className={css.parent}>
+                  <div className={css.item}>
+                  <h2>Недвижимость</h2>
+                  </div>
+                  <div className={css.group}>
+                      {articles.Nedvizhimost.map((el) => (
+                          <div key={el.id} className={css.card}>
+                              <img src={el.img} alt="" className={css.image} />
+                              <p className={css.name}>{el.cat_title}</p>
+                              <h4 className={css.title}>{el.title}</h4>
+                              <span className={css.date}>{el.created_at}</span>
+                          </div>
+                      ))}
+                  </div>
+              </div>
+          </section>
+      );
         
 };
 

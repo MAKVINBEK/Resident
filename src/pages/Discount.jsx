@@ -1,10 +1,10 @@
 import Header from "../component/header/Header"
 
-function Design() {
+function Discount() {
   return (
     <>
     </>
   )
 }
 
-export default  Design
+export default  Discount

@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: 60px;
     gap: 30px;
 }
 
@@ -30,27 +30,26 @@ body {
 
 .menu {
     display: flex;
-    height: 80px;
     gap: 30px;
 }
 
 .menu li {
     font-size: 19px;
-    height: 80px;
+    height: 60px;
     position: relative;
     display: flex;
     align-items: center;
+    gap: 5px;
     border-bottom: 4px solid #ffffff;
     line-height: 20px;
 }
 
-.menu>li:hover {
+.menu li:hover {
     border-image: linear-gradient(to right, #ac802a, #ac802a, #dcc164) 1;
     background: linear-gradient(to right, #ac802a, #dcc164);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 
 .clickDrop {
     display: flex;
@@ -66,23 +65,17 @@ body {
 .dropDown {
     display: none;
     position: absolute;
-    top: 105%;
-    left: 0;
+    top: 100%;
+    left: auto;
     z-index: 20;
     background-color: #fff;
-    padding: 10px;
     color: black;
     -webkit-text-fill-color: black;
 }
 
-.hasDropdown {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    width: 185px;
-}
 
-.menu li:hover>.dropDown {
+
+.menu :hover > .dropDown {
     display: block;
 }
 
@@ -132,7 +125,7 @@ section a {
 
 .input {
     position: absolute;
-    top: 15px;
+    top: 1px;
     left: 35%;
     width: 40%;
     padding: 10px 0;
@@ -222,12 +215,12 @@ section a {
         height: 100vh;
         background-color: #fff;
         padding-top: 10px;
-        padding-left: 20px;
+        padding: 0 20px;
     }
 
     .menu li {
         display:flex;
-        width: fit-content;
+        
         font-size: 20px;
         align-items: center;
         height: 50px;

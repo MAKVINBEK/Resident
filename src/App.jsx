@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Real_Estate from './pages/Real-Estate';
-import Design from './pages/Design';
+import Design from './pages/Discount';
 import Products from './pages/Products';
 import Interview from './pages/Interview';
 import Contacts from './pages/Contacts';
@@ -11,6 +11,9 @@ import Hotel from './pages/Hotel';
 import Header from './component/header/Header';
 import Footer from './component/footer/Footer';
 import Home from './pages/Home';
+import Discount from './pages/Discount';
+import UsefulTips from './component/UsefulTips';
+import Testy from './component/Testy';
 
 
 function App() {
@@ -21,14 +24,16 @@ function App() {
       <Header/>
         <Routes>
           <Route path='/' element={<Home/>} />
-          <Route path='/estate' element={<Real_Estate />} />
-          <Route path='/design' element={<Design />} />
+          <Route path='/nedvizhimost' element={<Real_Estate />} />
+          <Route path='/discount' element={<Discount/>} />
           <Route path='/products' element={<Products />} />
-          <Route path='/interview' element={<Interview />} />
+          <Route path='/intervju' element={<Interview />} />
           <Route path='/contact' element={<Contacts />} />
-          <Route path='/Luxury_life' element={<Luxury/>} />
+          <Route path='/luxury-life' element={<Luxury/>} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/Luxury_life/hotel" element={<Hotel/>} />
+          <Route path="/luxury-life/otel" element={<Hotel/>} />
+          <Route path="/poleznye-sovety" element={<UsefulTips/>} />
+          <Route path="/testy" element={<Testy/>} />
         </Routes>
         <Footer/>
       </Router>
