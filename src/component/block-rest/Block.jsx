@@ -1,10 +1,34 @@
 import css from "../frame/Frame.module.css";
 import style from "./Block.module.css"
 import next from "../../assets/next.png"
-import Data from "../../Data"
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 
 const Block = () => {
+    const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null); 
+
+  useEffect(() => {
+    const loadArticles = async () => {
+      try {
+        const response = await axios("https://resident.kg/api/ru/list/status");
+        setArticles(response.data); 
+      } catch (err) {
+        setError("ОШИБКА!!!");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadArticles();
+  }, []);
+
+
+  if (loading) return <p></p>;
+  if (error) return <p>{error}</p>;
+
     return (
         <section className="container">
             <div className={css.parent}>
@@ -12,38 +36,20 @@ const Block = () => {
                     <h1>Роскошный отдых</h1>
                     <img src={next} alt="" />
                 </div>
-
-                <div className={style.block}>
-
-                    <div className={style.block1}>
-                        <p className={style.name}>роскошный отдых</p>
-                        <h4 className={style.title}> Отель Орион - не только место для отдыха</h4>
-                        <span className={style.date}>1 февраля 2024 - 5 мин</span>
-                    </div>
-
+                {articles.Rascule_rest.slice(0, 1).map((el) => (
                     <div className={style.groupBlock}>
-                        {Data.map((el, Index) => (
-                            <div key={Index} className={css.card}>
-                                <p className={css.name}>{el.name}</p>
-                                <h4 className={css.title}>{el.title}</h4>
-                                <span className={css.date}>{el.date}</span>
-                            </div>
-                        ))}
+                        <img src={el.img} alt="" />
+                        <div className={style.block1}>
+                        <p className={style.name}>{el.cat_title}</p>
+                        <h4 className={style.title}>{el.title}</h4>
+                        <span className={style.date}>{el.created_at}</span>
                     </div>
+                    </div>
+                    
+                    
+                ))}
 
-                </div>
-
-
-                <div className={css.group}>
-                    {Data.map((el, Index) => (
-                        <div key={Index} className={css.card}>
-                            <img src={el.image} alt="" className={css.image} />
-                            <p className={css.name}>{el.name}</p>
-                            <h4 className={css.title}>{el.title}</h4>
-                            <span className={css.date}>{el.date}</span>
-                        </div>
-                    ))}
-                </div>
+                
             </div>
 
 

@@ -1,5 +1,4 @@
 import css from "./frame/Frame.module.css"
-import next from "../assets/next.png"
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -14,7 +13,7 @@ const Interwiv = () => {
           const response = await axios("https://resident.kg/api/ru/list");
           setArticles(response.data); 
         } catch (err) {
-          setError("Something went wrong, please try again later.");
+          setError("ОШИБКА!!!");
         } finally {
           setLoading(false);
         }
@@ -24,7 +23,7 @@ const Interwiv = () => {
     }, []);
   
   
-    if (loading) return <p>Загрузка... </p>;
+    if (loading) return <p> </p>;
     if (error) return <p>{error}</p>;
   
       return (

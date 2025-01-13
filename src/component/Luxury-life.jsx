@@ -14,7 +14,7 @@ const Luxury_life = () => {
           const response = await axios("https://resident.kg/api/ru/list");
           setArticles(response.data); 
         } catch (err) {
-          setError("Something went wrong, please try again later.");
+          setError("ОШИБКА!!!");
         } finally {
           setLoading(false);
         }
@@ -24,7 +24,7 @@ const Luxury_life = () => {
     }, []);
   
   
-    if (loading) return <p>Загрузка... </p>;
+    if (loading) return <p></p>;
     if (error) return <p>{error}</p>;
   
       return (

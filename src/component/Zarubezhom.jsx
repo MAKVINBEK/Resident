@@ -1,12 +1,13 @@
 import css from "./frame/Frame.module.css"
-import next from "../assets/next.png"
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const Estate = () => {
+const Zarubezhom = () => {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null); 
+
+    const targetIds = [242]
   
     useEffect(() => {
       const loadArticles = async () => {
@@ -24,7 +25,7 @@ const Estate = () => {
     }, []);
   
   
-    if (loading) return <p></p>;
+    if (loading) return <p> </p>;
     if (error) return <p>{error}</p>;
   
       return (
@@ -34,7 +35,7 @@ const Estate = () => {
                   <h2>Недвижимость</h2>
                   </div>
                   <div className={css.group}>
-                      {articles.Nedvizhimost.map((el) => (
+                      {articles.Nedvizhimost.filter(el => targetIds.includes(el.id)).map((el) => (
                           <div key={el.id} className={css.card}>
                               <img src={el.img} alt="" className={css.image} />
                               <p className={css.name}>{el.cat_title}</p>
@@ -50,4 +51,4 @@ const Estate = () => {
 };
 
 
-export default Estate;
+export default Zarubezhom;

@@ -4,7 +4,6 @@ import next from "../../assets/next.png"
 import axios from "axios";
 
 
-
 const Frame = () => {
     const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,10 +12,10 @@ const Frame = () => {
   useEffect(() => {
     const loadArticles = async () => {
       try {
-        const response = await axios("https://resident.kg/api/ru/list");
+        const response = await axios ("https://resident.kg/api/ru/list/status");
         setArticles(response.data); 
       } catch (err) {
-        setError("Something went wrong, please try again later.");
+        setError("ОШИБКА!!!");
       } finally {
         setLoading(false);
       }
@@ -26,7 +25,7 @@ const Frame = () => {
   }, []);
 
 
-  if (loading) return <p>Загрузка... </p>;
+  if (loading) return <p></p>;
   if (error) return <p>{error}</p>;
 
     return (
@@ -37,7 +36,7 @@ const Frame = () => {
                     <img src={next} alt="" />
                 </div>
                 <div className={css.group}>
-                    {articles.Interviews.map((el) => (
+                    {articles.Popular.slice(0, 4).map((el) => (
                         <div key={el.id} className={css.card}>
                             <img src={el.img} alt="" className={css.image} />
                             <p className={css.name}>{el.cat_title}</p>

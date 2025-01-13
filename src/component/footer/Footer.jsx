@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="container">
 
                 <div className={css.logos}>
-                    <Link to="/home"><img className={css.logosip} src={logo} alt="" /></Link>
+                    <Link to="/"><img className={css.logosip} src={logo} alt="" /></Link>
                     <div>
                         <img src={facebook} alt="" />
                         <img src={twitter} alt="" />
@@ -34,11 +34,12 @@ const Footer = () => {
                     <div className={css.blockStart}>
                         <div className={css.block}>
                             <h6 className={css.project_name} >Категории:</h6>
-                            <Link className={css.footer__link} to="/estate">Недвижимость</Link>
-                            <Link className={css.footer__link} to="/Luxury_life">Роскошный отдых</Link>
-                            <Link className={css.footer__link} to="/interview">Интервью</Link>
-                            <Link className={css.footer__link} to="/design">Дизайн</Link>
-                            <Link className={css.footer__link} to="/products">Продукты</Link>
+                            <Link className={css.footer__link} to="/intervju">Интервью</Link>
+                            <Link className={css.footer__link} to="/luxury-life">Luxury Life</Link>
+                            <Link className={css.footer__link} to="/nedvizhimost">Недвижимость</Link>
+                            <Link className={css.footer__link} to="/discount">Discount</Link>
+                            <Link className={css.footer__link} to="/poleznye-sovety">Полезные советы</Link>
+                            <Link className={css.footer__link} to="/testy">Тесты</Link>
                         </div>
                     </div>
 
