@@ -25,7 +25,7 @@ const Zarubezhom = () => {
     }, []);
   
   
-    if (loading) return <p> </p>;
+    if (loading) return <p></p>;
     if (error) return <p>{error}</p>;
   
       return (

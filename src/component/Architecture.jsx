@@ -1,57 +1,56 @@
-import css from "./Hotel_Title.module.css";
-import slip from "../../assets/slip.jpeg";
+import css from "./hotel_title/Hotel_Title.module.css";
 import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
-const Hotel_Interviews = () => {
-  const [articles, setArticles] = useState([]); // Список статей
-  const [loading, setLoading] = useState(true); // Состояние загрузки
-  const [error, setError] = useState(null); // Ошибка при загрузке
-
-  const { id } = useParams(); // Получаем ID из URL
-const [selectedId, setSelectedId] = useState(null);
-
-useEffect(() => {
-  if (id) {
-    setSelectedId(Number(id)); // Безопасно устанавливаем selectedId из URL
-  }
-}, [id]);
-
-  // Загрузка статей с API
-  useEffect(() => {
-    const loadArticles = async () => {
-      try {
-        const response = await axios("https://resident.kg/api/ru/list");
-        setArticles(response.data);
-      } catch (err) {
-        setError("Ошибка при загрузке данных. Попробуйте позже.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadArticles();
-  }, []);
-
+const Architecture = () => {
+    const [articles, setArticles] = useState([]); // Список статей
+    const [loading, setLoading] = useState(true); // Состояние загрузки
+    const [error, setError] = useState(null); // Ошибка при загрузке
   
-  const selectedItem = useMemo(
-    () => Array.isArray(articles.Interviews) ? articles.Interviews.find((item) => item.id === selectedId) : null,
-    [selectedId, articles]
-  );
-
-  if (loading) return <p></p>; // Рендер при загрузке
-  if (error) return <p>{error}</p>;
-  if (!selectedItem) return <p>Новость не найдена!</p>; // Рендер при отсутствии статьи
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth", // "smooth" для плавной прокрутки, "auto" для мгновенной
-    });
-  };
+    const { id } = useParams(); // Получаем ID из URL
+  const [selectedId, setSelectedId] = useState(null);
+  
+  useEffect(() => {
+    if (id) {
+      setSelectedId(Number(id)); // Безопасно устанавливаем selectedId из URL
+    }
+  }, [id]);
+  
+    // Загрузка статей с API
+    useEffect(() => {
+      const loadArticles = async () => {
+        try {
+          const response = await axios("https://resident.kg/api/ru/list");
+          setArticles(response.data);
+        } catch (err) {
+          setError("Ошибка при загрузке данных. Попробуйте позже.");
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      loadArticles();
+    }, []);
+  
+    
+    const selectedItem = useMemo(
+      () => Array.isArray(articles.Architecture) ? articles.Architecture.find((item) => item.id === selectedId) : null,
+      [selectedId, articles]
+    );
+  
+    if (loading) return <p></p>; // Рендер при загрузке
+    if (error) return <p>{error}</p>;
+    if (!selectedItem) return <p>Новость не найдена!</p>; // Рендер при отсутствии статьи
+  
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth", // "smooth" для плавной прокрутки, "auto" для мгновенной
+      });
+    };
 
   return (
     <section className="container">
@@ -100,7 +99,6 @@ useEffect(() => {
 
           <div className={css.user}>
             <div className={css.user_name}>
-              <img src={slip} alt="" />
               <div className={css.user_title}>
                 <p>Имя пользователя</p>
                 <span>Рейтинг</span>
@@ -113,7 +111,7 @@ useEffect(() => {
         {/* Правая колонка */}
         <div className={css.row_right}>
           <h2>Читайте также:</h2>
-          {articles.Interviews.map((el) => (
+          {articles.Architecture.map((el) => (
             <div
               key={el.id}
               onClick={() => {setSelectedId(el.id);scrollToTop();}}
@@ -137,4 +135,4 @@ useEffect(() => {
   );
 };
 
-export default Hotel_Interviews;
+export default Architecture;

@@ -39,7 +39,7 @@
 }
  
 .groupBlock img{
-    width: 600px;
+    width: 50%;
     height: 350px;
     object-fit: cover;
     filter:brightness(60%);
@@ -63,6 +63,10 @@
         grid-template-columns: 1fr;
         /* Все блоки в одном столбце */
         gap: 15px;
+    }
+
+    .groupBlock img{
+        width: 100%;
     }
 
     .block1 {

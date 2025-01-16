@@ -14,6 +14,11 @@ import Testy from './component/Testy';
 import Analiz from './component/Analiz_rieltora';
 import Zarubezhom from './component/Zarubezhom';
 import TestCat from './component/TestCat';
+import Nedvij from './component/Hotel_Nedvij';
+import Hotel_Interviews from './component/hotel_title/Hotel_Title';
+import Useful_Tips from './component/Useful_tips';
+import Architecture from './component/Architecture';
+import Projects from './component/Hotel_Projects';
 
 
 function App() {
@@ -35,6 +40,11 @@ function App() {
           <Route path="/nedvizhimost/analiz-rieltora" element={<Analiz/>} />
           <Route path="/nedvizhimost/nedvizhimost-zarubezhom" element={<Zarubezhom/>} />
           <Route path="/nedvizhimost/test-category" element={<TestCat/>} />
+          <Route path="/news/Недвижимость/:id" element={<Nedvij/>}/>
+          <Route path="/news/Интервью/:id" element={<Hotel_Interviews/>} />
+          <Route path="/news/Полезные советы/:id" element={<Useful_Tips/>} />
+          <Route path="/news/Архитектура/:id" element={<Architecture/>} />
+          <Route path="/news/Проекты/:id" element={<Projects/>} />
         </Routes>
         <Footer/>
       </Router>

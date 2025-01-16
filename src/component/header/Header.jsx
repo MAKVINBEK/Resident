@@ -68,7 +68,7 @@ const Header = () => {
                                 
                                 <div className={css.dropDown}>
                                     {el.subcategory.map((sub) => (
-                                    <Link to={`${el.slug}/${sub.slug}`}>{sub.title}</Link>
+                                    <Link to={`${el.slug}/${sub.slug}` } key={el.id}>{sub.title}</Link>
                                 ))}
                                 </div>
                                 
